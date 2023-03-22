@@ -1,0 +1,13 @@
+table{
+    width: 100%;
+    text-align: center;
+    border-spacing:  0 0.5rem;
+}
+
+table thead th{
+    background-color: #fff;
+    color: #969cb3;
+    opacity: 0.9;
+    padding: 1em;
+    font-size: 0.9em;
+}

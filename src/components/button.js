@@ -6,7 +6,7 @@ export function Button({ onclick, className, title }) {
      onclick={onclick}
     >
         
-     {title}
+     { title }
     </button>
   );
 }

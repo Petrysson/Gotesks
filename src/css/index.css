@@ -6,3 +6,30 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.content{
+    width: 100%;
+    max-width: 720px;
+    flex: 1;
+    margin: 3em auto 6em auto;
+}
+
+.main-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-new-Task{
+    color: #34ca00;
+}
+
+.btn-new-Task:hover{
+    background-color: #fff;
+}
+
+.total-tasks{
+    color: #83889a;
+    font-size: 0.9em;
+    font-weight: 600;
+}

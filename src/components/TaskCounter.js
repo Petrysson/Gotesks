@@ -1,6 +1,6 @@
 export function TaskCounter({ Tasks }) {
   return (
-    <span>
+    <span className="total-tasks">
       <strong>{ Tasks }</strong> Tarefas registradas
     </span>
   );
