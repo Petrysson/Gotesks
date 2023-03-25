@@ -11,3 +11,32 @@ table thead th{
     padding: 1em;
     font-size: 0.9em;
 }
+
+table tbody tr:first-child {
+    margin-top: 20px;
+}
+
+table tbody td{
+    background-color: #fff;
+    color: #83889a;
+    padding: 1.2em;
+    animation: slideTd 1s;
+}
+
+@keyframes slideTd{
+    from{
+        transform: translateY(50px);
+    }
+
+    to{
+        transform: translateY(0px);
+    }
+}
+
+.icon-delete{
+    cursor: pointer;
+}
+
+.icon-delete:hover{
+    opacity: 0.8;
+}

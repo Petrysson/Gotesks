@@ -6,6 +6,11 @@ const tasks = [
         id:1,
         Description: "Estudar JavaScript",
         date: '21/03/2023'
+    },
+    {
+        id:2,
+        Description: "Estudar HTML",
+        date: '21/03/2023'
     }
 ]
 
