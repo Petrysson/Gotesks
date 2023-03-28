@@ -14,6 +14,14 @@ function App() {
 
   const [showModal, setShowModal] = useState(false);
 
+  // funçao para criar uma tarefa e pegar os valores de um input 
+  function createTask(description, date){
+    if(!description || !date){
+      alert('Preencha todos os inputs')
+      return;
+    }
+  }
+
   function closeModal(){
     setShowModal(false)
   }
@@ -44,6 +52,7 @@ function App() {
         showModal &&(
           <Modal
             closeModal={closeModal}
+            createTask = { createTask }
           />
         )
       }

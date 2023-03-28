@@ -1,9 +1,16 @@
+import { useState } from 'react'
+
 import { Button } from '../button'
 import { FormGroup } from './FormGroup'
 
 import './Modal.css'
 
-export function Modal({closeModal}){
+
+
+export function Modal({closeModal, createTask}){
+    const [description, setDescription] = useState('')
+    const [date, setDate] = useState('')
+
     return(
         <div className='modal-background'>
             <article className='modal-container'>
@@ -15,16 +22,16 @@ export function Modal({closeModal}){
                         type="text"
                         id="description"
                         placeholder="descrição"
-                        value=""
-                        onChange={()=> {}}
+                        value={ description }
+                        onChange={e => setDescription(e.target.value)}
                         label="Descrição da tarefa"
                     />
 
                     <FormGroup 
                         type="date"
                         id="Data"
-                        value=""
-                        onChange={()=> {}}
+                        value={ date }
+                        onChange={e => setDate(e.target.value)}
                         label="Data"
                     />
 
@@ -36,7 +43,7 @@ export function Modal({closeModal}){
                         />
 
                         <Button
-                          onClick={() => {}}
+                          onClick={() =>createTask( description, date)}
                           className="btn-save"
                           title='Salvar'
                         />
