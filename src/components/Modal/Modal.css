@@ -86,3 +86,12 @@ form .buttons-modal{
 .buttons-modal .btn-save:hover{
     background-color: #2b9061;
 }
+
+
+@media (max-width: 700px) {
+    
+        .modal-container{
+            width: 90%;
+        }
+
+}

@@ -40,3 +40,9 @@ table tbody td{
 .icon-delete:hover{
     opacity: 0.8;
 }
+
+@media (max-width:700px) {
+    table{
+        padding: 1em;
+    }
+}

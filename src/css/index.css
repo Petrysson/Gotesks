@@ -33,3 +33,9 @@
     font-size: 0.9em;
     font-weight: 600;
 }
+
+@media (max-width:1000px) {
+    .main-header{
+        max-width: 95%;
+    }
+}

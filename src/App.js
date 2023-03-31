@@ -7,6 +7,8 @@ import { TaskCounter } from "./components/TaskCounter";
 import { Table } from "./components/Table";
 import { Modal } from "./components/Modal";
 
+import { saveTaskInLocalStorage } from "./Storage";
+
 import "./css/index.css";
 
 function App() {
@@ -17,9 +19,12 @@ function App() {
   // funçao para criar uma tarefa e pegar os valores de um input 
   function createTask(description, date){
     if(!description || !date){
-      alert('Preencha todos os inputs')
+      alert('Preencha todos os campos')
       return;
     }
+
+    saveTaskInLocalStorage(description, date)
+    setShowModal(false)
   }
 
   function closeModal(){
@@ -40,6 +45,7 @@ function App() {
             />
 
             <TaskCounter Tasks={1} />
+            
           </div>
 
           <Table />
