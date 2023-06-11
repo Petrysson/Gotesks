@@ -39,3 +39,9 @@
         max-width: 95%;
     }
 }
+
+.status-message{
+    text-align: center;
+    color: #969cb3;
+    margin-top: 2em;
+}

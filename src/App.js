@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { saveTaskInLocalStorage, getTasks } from "./Storage";
+import "./css/index.css";
 
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -7,14 +10,29 @@ import { TaskCounter } from "./components/TaskCounter";
 import { Table } from "./components/Table";
 import { Modal } from "./components/Modal";
 
-import { saveTaskInLocalStorage } from "./Storage";
-
-import "./css/index.css";
 
 function App() {
-  
+
+  const [tasks, setTasks] = useState([]);
+  const [TasksCounter, setTasksCouter] = useState([]);
+  const [statusMessage, setStatusMessage] = useState('');
+
 
   const [showModal, setShowModal] = useState(false);
+
+  //Função que carrega as tarefas adicionadas no localStorage
+  function loadTasks(){
+    const allTasks = getTasks();
+
+    if(allTasks.length === 0){
+      setStatusMessage('Você não tem tarefas');
+    } else{
+      setStatusMessage();
+    }
+
+    setTasksCouter(allTasks.length);
+    setTasks(allTasks);
+  }
 
   // funçao para criar uma tarefa e pegar os valores de um input 
   function createTask(description, date){
@@ -23,13 +41,18 @@ function App() {
       return;
     }
 
-    saveTaskInLocalStorage(description, date)
+    saveTaskInLocalStorage(description, date, tasks);
+    loadTasks();
     setShowModal(false)
   }
 
   function closeModal(){
     setShowModal(false)
   }
+
+  useEffect(() => {
+    loadTasks();
+  }, [])
 
   return (
     <>
@@ -44,11 +67,12 @@ function App() {
               title="+ Nova tarefa"
             />
 
-            <TaskCounter Tasks={1} />
+            <TaskCounter Tasks={ TasksCounter } />
             
           </div>
 
           <Table />
+          <h3 className="status-message"> { statusMessage } </h3>
         </main>
 
         <Footer />
