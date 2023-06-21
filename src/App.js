@@ -14,7 +14,7 @@ import { Modal } from "./components/Modal";
 function App() {
 
   const [tasks, setTasks] = useState([]);
-  const [TasksCounter, setTasksCouter] = useState([]);
+  const [tasksCounter, setTasksCouter] = useState([]);
   const [statusMessage, setStatusMessage] = useState('');
 
 
@@ -37,7 +37,7 @@ function App() {
   // funçao para criar uma tarefa e pegar os valores de um input 
   function createTask(description, date){
     if(!description || !date){
-      alert('Preencha todos os campos')
+      alert('Preencha todos os campos');
       return;
     }
 
@@ -67,11 +67,14 @@ function App() {
               title="+ Nova tarefa"
             />
 
-            <TaskCounter Tasks={ TasksCounter } />
+            <TaskCounter tasks={ tasksCounter } />
             
           </div>
 
-          <Table />
+          <Table
+           tasks={tasks}
+          />
+
           <h3 className="status-message"> { statusMessage } </h3>
         </main>
 

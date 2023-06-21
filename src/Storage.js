@@ -1,7 +1,7 @@
 export function saveTaskInLocalStorage(description, date, tasks){
     const newTask = {
-        descricao: description,
-        data: new Date(date).toLocaleDateString('pt-BR', { timeZone: 'UTC' }),
+        description: description,
+        date: new Date(date).toLocaleDateString('pt-BR', { timeZone: 'UTC' }),
         id: Math.floor( Math.random() * 2000 )
     }
 

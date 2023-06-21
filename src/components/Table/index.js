@@ -1,20 +1,9 @@
 import { TableRow } from "./TableRow";
 
 import './Table.css'
-const tasks = [
-    {
-        id:1,
-        Description: "Estudar JavaScript",
-        date: '21/03/2023'
-    },
-    {
-        id:2,
-        Description: "Estudar HTML",
-        date: '21/03/2023'
-    }
-]
 
-export function Table() {
+
+export function Table({ tasks }) {
   return (
     <table>
       <thead>
@@ -27,10 +16,10 @@ export function Table() {
 
       <tbody>
         {
-            tasks.map(tasks => (
+            tasks.map(task => (
                 <TableRow 
-                key={tasks.id }
-                tasks = { tasks }
+                key={task.id }
+                task = { task }
                 />
             ))
         }

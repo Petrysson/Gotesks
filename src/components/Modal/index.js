@@ -6,8 +6,8 @@ import { FormGroup } from './FormGroup'
 import './Modal.css'
 
 export function Modal({closeModal, createTask}){
-    const [description, setDescription] = useState('')
-    const [date, setDate] = useState('')
+    const [description, setDescription] = useState('');
+    const [date, setDate] = useState('');
 
     return(
         <div className='modal-background'>
