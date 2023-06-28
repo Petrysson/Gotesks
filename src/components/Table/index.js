@@ -3,7 +3,7 @@ import { TableRow } from "./TableRow";
 import './Table.css'
 
 
-export function Table({ tasks }) {
+export function Table({ tasks, removeTask }) {
   return (
     <table>
       <thead>
@@ -20,6 +20,7 @@ export function Table({ tasks }) {
                 <TableRow 
                 key={task.id }
                 task = { task }
+                removeTask = { removeTask }
                 />
             ))
         }

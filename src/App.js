@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { saveTaskInLocalStorage, getTasks } from "./Storage";
+import { saveTaskInLocalStorage, getTasks, removeTaskInLocalStorage } from "./Storage";
 import "./css/index.css";
 
 import { Header } from "./components/Header";
@@ -50,6 +50,14 @@ function App() {
     setShowModal(false)
   }
 
+  //função que dará vida ao icone da lixeira.
+  //essa função vai servir para excluir uma tarefa
+  function removeTask(id){
+    removeTaskInLocalStorage(id, tasks);
+    loadTasks();
+  }
+ 
+
   useEffect(() => {
     loadTasks();
   }, [])
@@ -72,7 +80,8 @@ function App() {
           </div>
 
           <Table
-           tasks={tasks}
+           tasks = { tasks }
+           removeTask = { removeTask }
           />
 
           <h3 className="status-message"> { statusMessage } </h3>
